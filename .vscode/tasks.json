@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "debug",
+            "command": "g++ -c src/*.cpp -std=c++14 -Werror -m64 -g -Wall -I include && g++ *.o -o bin/debug/main -lsfml-graphics -lsfml-window -lsfml-system && ./bin/debug/main",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "group": "build"
+        },
+        {
+            "label": "release",
+            "command": "g++ -c src/*.cpp -std=c++14 -m64 -O3 -Wall -I include && g++ *.o -o bin/release/main -s -lsfml-window -lsfml-graphics -lsfml-system  && ./bin/release/main",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "group": "build"
+        }
+    ]
+}
